@@ -257,7 +257,25 @@
       "reason": "The required serializer must fail when unavailable, rather than silently emit different bytes."
     },
     "font_binaries_version_and_metadata_changed": false,
-    "hosted_fix_status": "pending"
+    "hosted_fix_status": "success",
+    "hosted_fix_verification": {
+      "run_id": 34024691081,
+      "url": "https://github.com/smelllikeruh/ruh-font/actions/runs/34024691081",
+      "commit": "69292b3e0bb6f9e654bc5f105bae9fa301767a8b",
+      "status": "completed",
+      "conclusion": "success",
+      "environment": "ubuntu-latest; Python3.12.8; requirements.txt",
+      "scope": "Build all formats, require tracked outputs, exact git byte comparison against committed fonts, and release metadata parsing."
+    }
   },
-  "hosted_ci_status": "original_run_failed_byte_reproduction; fixed_run_pending"
+  "hosted_ci_status": "success",
+  "hosted_ci_verification": {
+    "run_id": 34024691081,
+    "url": "https://github.com/smelllikeruh/ruh-font/actions/runs/34024691081",
+    "commit": "69292b3e0bb6f9e654bc5f105bae9fa301767a8b",
+    "status": "completed",
+    "conclusion": "success",
+    "environment": "ubuntu-latest; Python3.12.8; requirements.txt",
+    "scope": "Build all formats, require tracked outputs, exact git byte comparison against committed fonts, and release metadata parsing."
+  }
 }

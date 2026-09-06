@@ -23,7 +23,7 @@ RUH_FONT_PYTHON=.venv/bin/python ./build.sh
 .venv/bin/python sources/check_release.py
 ```
 
-Outputs are separated into `fonts/ttf`, `fonts/otf` and `fonts/webfonts`. [SOURCE-BUILD.md](SOURCE-BUILD.md) explains the pinned environment, deterministic production build and distinct standard fontmake compatibility command. [The reproducibility record](documentation/reproducible-build.json) records tested binaries and hashes. The repository includes a build/check workflow; a hosted CI pass is claimed only when its actual GitHub run succeeds.
+Outputs are separated into `fonts/ttf`, `fonts/otf` and `fonts/webfonts`. [SOURCE-BUILD.md](SOURCE-BUILD.md) explains the pinned environment, deterministic production build and distinct standard fontmake compatibility command. [The reproducibility record](documentation/reproducible-build.json) records tested binaries and hashes. The [hosted Linux build/check workflow](https://github.com/smelllikeruh/ruh-font/actions/runs/34024691081) passed: all committed TTF/OTF/WOFF2 bytes reproduced, and release metadata checks passed. The build explicitly pins and requires the HarfBuzz serializer used by the reviewed release.
 
 ## Quality record
 
