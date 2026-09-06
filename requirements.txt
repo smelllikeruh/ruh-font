@@ -1,0 +1,4 @@
+fonttools[woff]==4.64.0
+defcon==0.12.2
+brotli==1.2.0
+zopfli==0.4.3

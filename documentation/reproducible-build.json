@@ -1,0 +1,230 @@
+{
+  "version": "1.102",
+  "family": "RUH",
+  "status": "pass",
+  "status_scope": "Local reproducibility, release metadata, sanitizer and archived outline/layout equivalence only. Google Fonts profile status is reported separately below.",
+  "checked_at_utc": "2026-09-06T09:09:04.516364+00:00",
+  "canonical_source": "sources/RUH.ufo",
+  "change": "Family name and OFL release metadata changed from 1.100; all 365 glyph outlines, glyph order, cmap, horizontal metrics, GSUB, GPOS and checked vertical metrics remain identical.",
+  "environment": {
+    "python": "3.12.8",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "build_dependencies": {
+      "fonttools": "4.64.0",
+      "defcon": "0.12.2",
+      "brotli": "1.2.0",
+      "zopfli": "0.4.3"
+    },
+    "opentype_sanitizer": "9.2.0"
+  },
+  "clean_rebuild": {
+    "method": "Copied only sources/, build.sh, requirements.txt and OFL.txt into a fresh temporary directory with no font outputs, then invoked the unchanged build.sh.",
+    "command": "RUH_FONT_PYTHON=python sh ./build.sh",
+    "returncode": 0,
+    "input_file_count": 377,
+    "input_manifest_sha256": "0403ab7c4f6e835afa02c5a177698636288526285042aeae733db28e3158e89a",
+    "build_script_sha256": "0191ef3e810b6fb57150094937e1dbf76d73e0cfff4d2520c2c30c346ce6e05f",
+    "builder_sha256": "4570913c00e6e52197c410a027346b38053b0d1713c0d13718cb42c7ff46cf01",
+    "metadata_sha256": "aaa774ed105cc5c1317ab8b6a6f9b5be930e104d49af81fcc77b249bfc1cfba4",
+    "source_inputs_unchanged": true
+  },
+  "checks": {
+    "ttf": {
+      "path": "fonts/ttf/RUH-Regular.ttf",
+      "sha256": "641d7b127c05881ded2256d55ce6701c6b2735ec9be429f28d296905c7b08a2a",
+      "expected_sha256": "641d7b127c05881ded2256d55ce6701c6b2735ec9be429f28d296905c7b08a2a",
+      "matches_expected": true,
+      "rebuild_sha256": "641d7b127c05881ded2256d55ce6701c6b2735ec9be429f28d296905c7b08a2a",
+      "identical_rebuild": true,
+      "archive_sha256": "a5dfe676608c568d5fb068c5f97b7f62de99a216fe17ec73131b9fc77f3a7482",
+      "archive_matches_recorded_1100": true,
+      "encoded_characters": 351,
+      "glyphs": 365,
+      "same_glyph_order": true,
+      "changed_outline_glyphs": [],
+      "unchanged_layout_tables": {
+        "cmap": true,
+        "hmtx": true,
+        "GSUB": true,
+        "GPOS": true
+      },
+      "unchanged_layout_metrics": {
+        "unitsPerEm": true,
+        "hhea": true,
+        "OS/2": true
+      },
+      "ots_returncode": 0,
+      "ots_stdout": "File sanitized successfully!\n",
+      "ots_stderr": "",
+      "status": "pass"
+    },
+    "otf": {
+      "path": "fonts/otf/RUH-Regular.otf",
+      "sha256": "ac7d8de3fb75a1829a51ddef62be198d49da6a908aa5c22768b0723db19c14df",
+      "expected_sha256": "ac7d8de3fb75a1829a51ddef62be198d49da6a908aa5c22768b0723db19c14df",
+      "matches_expected": true,
+      "rebuild_sha256": "ac7d8de3fb75a1829a51ddef62be198d49da6a908aa5c22768b0723db19c14df",
+      "identical_rebuild": true,
+      "archive_sha256": "92a64da52bcbb57c6d4dda0b12fccf94fbab0bee55c95ed0eedbd33789de86b8",
+      "archive_matches_recorded_1100": true,
+      "encoded_characters": 351,
+      "glyphs": 365,
+      "same_glyph_order": true,
+      "changed_outline_glyphs": [],
+      "unchanged_layout_tables": {
+        "cmap": true,
+        "hmtx": true,
+        "GSUB": true,
+        "GPOS": true
+      },
+      "unchanged_layout_metrics": {
+        "unitsPerEm": true,
+        "hhea": true,
+        "OS/2": true
+      },
+      "ots_returncode": 0,
+      "ots_stdout": "File sanitized successfully!\n",
+      "ots_stderr": "",
+      "status": "pass"
+    },
+    "woff2": {
+      "path": "fonts/webfonts/RUH-Regular.woff2",
+      "sha256": "1c282abdf03abb1fe9de0222879f59d14fb199d18af033135f748c803a9e3fe6",
+      "expected_sha256": "1c282abdf03abb1fe9de0222879f59d14fb199d18af033135f748c803a9e3fe6",
+      "matches_expected": true,
+      "rebuild_sha256": "1c282abdf03abb1fe9de0222879f59d14fb199d18af033135f748c803a9e3fe6",
+      "identical_rebuild": true,
+      "archive_sha256": "e510938fe5ef8d2fb71d4e31cac0761b724ea1636744c9ca65334d3a6ca7d587",
+      "archive_matches_recorded_1100": true,
+      "encoded_characters": 351,
+      "glyphs": 365,
+      "same_glyph_order": true,
+      "changed_outline_glyphs": [],
+      "unchanged_layout_tables": {
+        "cmap": true,
+        "hmtx": true,
+        "GSUB": true,
+        "GPOS": true
+      },
+      "unchanged_layout_metrics": {
+        "unitsPerEm": true,
+        "hhea": true,
+        "OS/2": true
+      },
+      "ots_returncode": 0,
+      "ots_stdout": "File sanitized successfully!\n",
+      "ots_stderr": "",
+      "status": "pass"
+    }
+  },
+  "release_metadata_check": {
+    "status": "pass",
+    "returncode": 0,
+    "warnings": [
+      "The exact family name 'RUH' is all capitals. Google Fonts naming review and an exception are required; a local release check does not establish approval. The checker preserves the configured name."
+    ]
+  },
+  "google_fonts_binary_profile": {
+    "tool": "FontBakery",
+    "version": "1.1.0",
+    "profile": "googlefonts",
+    "status": "fail",
+    "returncode": 1,
+    "executions": 236,
+    "counts": {
+      "ERROR": 0,
+      "FATAL": 0,
+      "FAIL": 1,
+      "WARN": 8,
+      "INFO": 8,
+      "SKIP": 107,
+      "PASS": 112
+    },
+    "all_checks_enabled": true,
+    "network_enabled": true,
+    "network_timeout_seconds": 20,
+    "input": "Exact release fonts/ttf/RUH-Regular.ttf and OFL.txt in an isolated family directory.",
+    "issues": [
+      {
+        "check": "alt_caron",
+        "result": "WARN",
+        "codes": [
+          "decomposed-outline"
+        ]
+      },
+      {
+        "check": "contour_count",
+        "result": "WARN",
+        "codes": [
+          "contour-count"
+        ]
+      },
+      {
+        "check": "googlefonts/article/images",
+        "result": "WARN",
+        "codes": [
+          "lacks-article"
+        ]
+      },
+      {
+        "check": "googlefonts/metadata/unreachable_subsetting",
+        "result": "WARN",
+        "codes": [
+          "unreachable-subsetting"
+        ]
+      },
+      {
+        "check": "googlefonts/glyphsets/shape_languages",
+        "result": "WARN",
+        "codes": [
+          "warning-language-shaping"
+        ]
+      },
+      {
+        "check": "googlefonts/family_name_compliance",
+        "result": "FAIL",
+        "codes": [
+          "abbreviation"
+        ]
+      },
+      {
+        "check": "outline_colinear_vectors",
+        "result": "WARN",
+        "codes": [
+          "found-colinear-vectors"
+        ]
+      },
+      {
+        "check": "outline_semi_vertical",
+        "result": "WARN",
+        "codes": [
+          "found-semi-vertical"
+        ]
+      },
+      {
+        "check": "googlefonts/vendor_id",
+        "result": "WARN",
+        "codes": [
+          "unknown"
+        ]
+      }
+    ],
+    "license_checks": {
+      "googlefonts/font_copyright": "PASS",
+      "googlefonts/license/OFL_body_text": "PASS",
+      "googlefonts/license/OFL_copyright": "PASS",
+      "googlefonts/name/license": "PASS",
+      "googlefonts/name/license_url": "PASS"
+    },
+    "boundaries": [
+      "The Google Fonts binary profile ran on TTF; OTF and WOFF2 were separately parsed, sanitized and compared.",
+      "No METADATA.pb, DESCRIPTION.en_us.html or article was fabricated. Repository and metadata checks can skip when their required conditions are absent.",
+      "The RUH abbreviation failure is retained. An accepted naming exception is not established.",
+      "Warnings and conditional skips are not passes. This report does not establish Google Fonts listing approval."
+    ],
+    "official_tool_release_source": "https://pypi.org/project/fontbakery/",
+    "official_tool_source_verified_at_utc": "2026-09-06T09:09:04.516364+00:00"
+  },
+  "google_fonts_acceptance": "not_established",
+  "hosted_ci_status_at_local_check": "not_run"
+}

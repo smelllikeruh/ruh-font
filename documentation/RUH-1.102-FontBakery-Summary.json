@@ -1,0 +1,101 @@
+{
+  "tool": "FontBakery",
+  "version": "1.1.0",
+  "profile": "googlefonts",
+  "status": "fail",
+  "returncode": 1,
+  "executions": 236,
+  "counts": {
+    "ERROR": 0,
+    "FATAL": 0,
+    "FAIL": 1,
+    "WARN": 8,
+    "INFO": 8,
+    "SKIP": 107,
+    "PASS": 112
+  },
+  "all_checks_enabled": true,
+  "network_enabled": true,
+  "network_timeout_seconds": 20,
+  "input": "Exact release fonts/ttf/RUH-Regular.ttf and OFL.txt in an isolated family directory.",
+  "issues": [
+    {
+      "check": "alt_caron",
+      "result": "WARN",
+      "codes": [
+        "decomposed-outline"
+      ]
+    },
+    {
+      "check": "contour_count",
+      "result": "WARN",
+      "codes": [
+        "contour-count"
+      ]
+    },
+    {
+      "check": "googlefonts/article/images",
+      "result": "WARN",
+      "codes": [
+        "lacks-article"
+      ]
+    },
+    {
+      "check": "googlefonts/metadata/unreachable_subsetting",
+      "result": "WARN",
+      "codes": [
+        "unreachable-subsetting"
+      ]
+    },
+    {
+      "check": "googlefonts/glyphsets/shape_languages",
+      "result": "WARN",
+      "codes": [
+        "warning-language-shaping"
+      ]
+    },
+    {
+      "check": "googlefonts/family_name_compliance",
+      "result": "FAIL",
+      "codes": [
+        "abbreviation"
+      ]
+    },
+    {
+      "check": "outline_colinear_vectors",
+      "result": "WARN",
+      "codes": [
+        "found-colinear-vectors"
+      ]
+    },
+    {
+      "check": "outline_semi_vertical",
+      "result": "WARN",
+      "codes": [
+        "found-semi-vertical"
+      ]
+    },
+    {
+      "check": "googlefonts/vendor_id",
+      "result": "WARN",
+      "codes": [
+        "unknown"
+      ]
+    }
+  ],
+  "license_checks": {
+    "googlefonts/font_copyright": "PASS",
+    "googlefonts/license/OFL_body_text": "PASS",
+    "googlefonts/license/OFL_copyright": "PASS",
+    "googlefonts/name/license": "PASS",
+    "googlefonts/name/license_url": "PASS"
+  },
+  "boundaries": [
+    "The Google Fonts binary profile ran on TTF; OTF and WOFF2 were separately parsed, sanitized and compared.",
+    "No METADATA.pb, DESCRIPTION.en_us.html or article was fabricated. Repository and metadata checks can skip when their required conditions are absent.",
+    "The RUH abbreviation failure is retained. An accepted naming exception is not established.",
+    "Warnings and conditional skips are not passes. This report does not establish Google Fonts listing approval."
+  ],
+  "official_tool_release_source": "https://pypi.org/project/fontbakery/",
+  "official_tool_source_verified_at_utc": "2026-09-06T09:09:04.516364+00:00"
+}

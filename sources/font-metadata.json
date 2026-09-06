@@ -1,0 +1,20 @@
+{
+  "family": "RUH",
+  "version": "1.102",
+  "basename": "RUH-Regular",
+  "names": {
+    "familyName": "RUH",
+    "styleName": "Regular",
+    "uniqueFontIdentifier": "RUH 1.102",
+    "fullName": "RUH Regular",
+    "psName": "RUH-Regular",
+    "version": "Version 1.102",
+    "manufacturer": "RŪḤ · Tariq Shaheed Johnson",
+    "designer": "Original AI-assisted letterforms; font engineering for RŪḤ",
+    "description": "Display type developed from original Midjourney lettering and GPT Image glyph studies. Single weight; designed for expressive headlines.",
+    "sampleText": "RŪḤ · Saint Noir · Fred Hampton Free Store",
+    "copyright": "Copyright 2026 The RUH Project Authors (https://github.com/smelllikeruh/ruh-font)",
+    "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+    "licenseInfoURL": "https://openfontlicense.org"
+  }
+}

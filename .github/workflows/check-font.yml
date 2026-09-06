@@ -1,0 +1,35 @@
+name: Check font release
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out sources and committed fonts
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12.8"
+      - name: Install pinned build dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Build all font formats
+        run: RUH_FONT_PYTHON=python sh ./build.sh
+      - name: Verify committed font bytes reproduce
+        run: |
+          git ls-files --error-unmatch -- \
+            fonts/ttf/*.ttf \
+            fonts/otf/*.otf \
+            fonts/webfonts/*.woff2
+          git diff --exit-code -- fonts
+      - name: Check release metadata and font parsing
+        run: python sources/check_release.py
