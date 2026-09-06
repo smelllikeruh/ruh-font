@@ -3,7 +3,7 @@
   "family": "RUH",
   "status": "pass",
   "status_scope": "Local reproducibility, release metadata, sanitizer and archived outline/layout equivalence only. Google Fonts profile status is reported separately below.",
-  "checked_at_utc": "2026-09-06T09:09:04.516364+00:00",
+  "checked_at_utc": "2026-09-06T09:24:25.698496+00:00",
   "canonical_source": "sources/RUH.ufo",
   "change": "Family name and OFL release metadata changed from 1.100; all 365 glyph outlines, glyph order, cmap, horizontal metrics, GSUB, GPOS and checked vertical metrics remain identical.",
   "environment": {
@@ -13,20 +13,23 @@
       "fonttools": "4.64.0",
       "defcon": "0.12.2",
       "brotli": "1.2.0",
-      "zopfli": "0.4.3"
+      "zopfli": "0.4.3",
+      "uharfbuzz": "0.56.1"
     },
     "opentype_sanitizer": "9.2.0"
   },
   "clean_rebuild": {
-    "method": "Copied only sources/, build.sh, requirements.txt and OFL.txt into a fresh temporary directory with no font outputs, then invoked the unchanged build.sh.",
+    "method": "Created a fresh Python 3.12.8 environment from requirements.txt only, copied sources/, build.sh, requirements.txt and OFL.txt into a temporary directory with no font outputs, then invoked the unchanged build.sh.",
     "command": "RUH_FONT_PYTHON=python sh ./build.sh",
     "returncode": 0,
     "input_file_count": 377,
-    "input_manifest_sha256": "0403ab7c4f6e835afa02c5a177698636288526285042aeae733db28e3158e89a",
+    "input_manifest_sha256": "492ebe23541294de60ae080d54762bb75c0622015048a644e5836998a9041cc2",
     "build_script_sha256": "0191ef3e810b6fb57150094937e1dbf76d73e0cfff4d2520c2c30c346ce6e05f",
-    "builder_sha256": "4570913c00e6e52197c410a027346b38053b0d1713c0d13718cb42c7ff46cf01",
+    "builder_sha256": "a8e79ac324a852e3ca488ab990817c6aba61f4eda0ea9c95881378e2f561e546",
     "metadata_sha256": "aaa774ed105cc5c1317ab8b6a6f9b5be930e104d49af81fcc77b249bfc1cfba4",
-    "source_inputs_unchanged": true
+    "source_inputs_unchanged": true,
+    "requirements_sha256": "e7db6e616e977233a1523a95141066119bc23850e3b701f447e9cea4a8cf0ff4",
+    "environment_scope": "Fresh local macOS dependency-only environment; hosted Linux fix verification pending."
   },
   "checks": {
     "ttf": {
@@ -226,5 +229,35 @@
     "official_tool_source_verified_at_utc": "2026-09-06T09:09:04.516364+00:00"
   },
   "google_fonts_acceptance": "not_established",
-  "hosted_ci_status_at_local_check": "not_run"
+  "hosted_ci_status_at_local_check": "not_run",
+  "binary_qa_checked_at_utc": "2026-09-06T09:09:04.516364+00:00",
+  "ci_reproducibility_fix": {
+    "original_run_url": "https://github.com/smelllikeruh/ruh-font/actions/runs/34024166593",
+    "original_run_commit": "041cc8e1bb05240bcd69602992fd07ff340f7917",
+    "original_run_conclusion": "failure",
+    "cause": "FontTools auto-selected the HarfBuzz OpenType serializer in the full local environment, but its pure-Python serializer in the dependency-only Linux environment. uharfbuzz was an undeclared optional dependency.",
+    "evidence": "Disabling optional HarfBuzz locally reproduced all three failed Linux hashes exactly. Only GSUB/GPOS binary packing and the resulting head.checkSumAdjustment differ; decompiled GSUB/GPOS XML is identical. WOFF2 output drift is inherited from changed OpenType bytes.",
+    "fix": "Pin uharfbuzz==0.56.1 and explicitly require USE_HARFBUZZ_REPACKER=True in each FontBuilder.",
+    "fresh_environment": {
+      "packages": {
+        "brotli": "1.2.0",
+        "defcon": "0.12.2",
+        "fonttools": "4.64.0",
+        "uharfbuzz": "0.56.1",
+        "unicodedata2": "17.0.1",
+        "zopfli": "0.4.3"
+      },
+      "python": "3.12.8"
+    },
+    "local_status": "pass",
+    "all_three_published_hashes_preserved": true,
+    "required_serializer_guard": {
+      "returncode": 1,
+      "expected_failure": true,
+      "reason": "The required serializer must fail when unavailable, rather than silently emit different bytes."
+    },
+    "font_binaries_version_and_metadata_changed": false,
+    "hosted_fix_status": "pending"
+  },
+  "hosted_ci_status": "original_run_failed_byte_reproduction; fixed_run_pending"
 }

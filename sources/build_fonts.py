@@ -11,6 +11,7 @@ from fontTools.pens.t2CharStringPen import T2CharStringPen
 from fontTools.pens.cu2quPen import Cu2QuPen
 from fontTools.ttLib import TTFont,newTable
 from fontTools.ttLib.tables.ttProgram import Program
+from fontTools.ttLib.tables.otBase import USE_HARFBUZZ_REPACKER
 from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 root=Path(__file__).resolve().parent.parent
 fontdir=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else root/'fonts'
@@ -25,7 +26,10 @@ for gn in order:
  metrics[gn]=(round(g.width),round(bounds[0]))
  for cp in g.unicodes:cmap[cp]=gn
 for is_ttf,ext in [(True,'ttf'),(False,'otf')]:
- fb=FontBuilder(1000,isTTF=is_ttf);fb.setupGlyphOrder(order);fb.setupCharacterMap(cmap)
+ fb=FontBuilder(1000,isTTF=is_ttf)
+ # The published bytes use HarfBuzz packing; never silently select another serializer.
+ fb.font.cfg[USE_HARFBUZZ_REPACKER]=True
+ fb.setupGlyphOrder(order);fb.setupCharacterMap(cmap)
  if is_ttf:
   glyphs={}
   for gn,p in records.items():
